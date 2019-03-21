@@ -11,12 +11,13 @@ __author__ = supybot.Author('haliphax', 'haliphax', 'haliphax@nope')
 __contributors__ = {}
 __url__ = 'https://github.com/haliphax/supybot-greet'
 
-import config
-import plugin
+from . import config
+from . import plugin
+from imp import reload
 reload(plugin)
 
 if world.testing:
-    import test
+    from . import test
 
 Class = plugin.Class
 configure = config.configure
